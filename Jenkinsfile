@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'f68aa967-c9ec-453e-ad7e-8fd2d684fa30', url: 'https://github.com/Junedevops06/myInfra2022ForkRepo']]])
             }
         }
     
